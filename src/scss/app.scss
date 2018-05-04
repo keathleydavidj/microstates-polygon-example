@@ -1,0 +1,17 @@
+body {
+  background-color: #fefefe;
+
+  h1 {
+    font-size: 40px;
+    margin: 0.5em;
+  }
+
+  .tile {
+    padding: 1em;
+  }
+
+  canvas {
+    height: 500px;
+    width: 500px;
+  }
+}
