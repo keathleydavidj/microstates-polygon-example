@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import State from '@microstates/react';
 import Polygon from './polygon';
+import Canvas from './components/canvas';
+import Controls from './components/controls';
 import './scss/app.scss';
 
 const App = () => {
@@ -23,65 +25,10 @@ const App = () => {
             <div className="hero-body container">
               <div className="tile is-ancestor">
                 <div className="tile is-4 is-parent">
-                  <div className="tile is-child box">
-                    <h3 className="subtitle">Controls go here</h3>
-                    <div className="field has-addons has-addons-centered">
-                      <label className="label">Number of sides</label>
-                      <div className="control">
-                        <button
-                          className="button"
-                          onClick={() => polygon.incrementSides(-1)}
-                          disabled={!polygon.state.canDecrement}>-</button>
-                      </div>
-                      <div className="control">
-                        <input className="input" type="number" value={polygon.state.sides}/>
-                      </div>
-                      <div className="control">
-                        <button className="button" onClick={() => polygon.incrementSides(1)}>+</button>
-                      </div>
-                    </div>
-                    <div className="field has-addons has-addons-centered">
-                      <label className="label">Length of sides</label>
-                      <div className="control">
-                        <button className="button">-</button>
-                      </div>
-                      <div className="control">
-                        <input className="input" type="number" />
-                      </div>
-                      <div className="control">
-                        <button className="button">+</button>
-                      </div>
-                    </div>
-                    <div className="field has-addons has-addons-centered">
-                      <label className="label">Angle of rotation</label>
-                      <div className="control">
-                        <button className="button">-</button>
-                      </div>
-                      <div className="control">
-                        <input className="input" type="number" />
-                      </div>
-                      <div className="control">
-                        <button className="button">+</button>
-                      </div>
-                    </div>
-                    <div className="field has-addons has-addons-centered">
-                      <label className="label">Point of origin</label>
-                      <div className="control">
-                        <button className="button">-</button>
-                      </div>
-                      <div className="control">
-                        <input className="input" type="number" />
-                      </div>
-                      <div className="control">
-                        <button className="button">+</button>
-                      </div>
-                    </div>
-                  </div>
+                  <Controls polygon={polygon} />
                 </div>
                 <div className="tile is-parent">
-                  <div className="tile is-child box">
-                    <canvas id="canvas"></canvas>
-                  </div>
+                  <Canvas polygon={polygon} />
                 </div>
               </div>
             </div>
