@@ -18,7 +18,7 @@ const Controls = ({polygon}) => {
           <button className="button" onClick={() => polygon.incrementSides(1)}>+</button>
         </div>
       </div>
-      <div className="field has-addons has-addons-centered">
+      {/* <div className="field has-addons has-addons-centered">
         <label className="label">Length of sides</label>
         <div className="control">
           <button className="button">-</button>
@@ -33,13 +33,7 @@ const Controls = ({polygon}) => {
       <div className="field has-addons has-addons-centered">
         <label className="label">Angle of rotation</label>
         <div className="control">
-          <button className="button">-</button>
-        </div>
-        <div className="control">
-          <input className="input" type="number" />
-        </div>
-        <div className="control">
-          <button className="button">+</button>
+          <input className="input" type="range" min="0" max="360" onChange={()=>{}}/>
         </div>
       </div>
       <div className="field has-addons has-addons-centered">
@@ -53,7 +47,7 @@ const Controls = ({polygon}) => {
         <div className="control">
           <button className="button">+</button>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

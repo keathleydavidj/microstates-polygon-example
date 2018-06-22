@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import State from '@microstates/react';
 import Polygon from './polygon';
-import Canvas from './components/canvas';
 import Controls from './components/controls';
 import './scss/app.scss';
+import { Stage, Layer, RegularPolygon } from 'react-konva';
 
 const App = () => {
   return (
@@ -21,6 +21,7 @@ const App = () => {
 
       <State type={Polygon} value={{ sides: 3 }}>
         {polygon => {
+          console.log('sides: ', polygon)
           return (
             <div className="hero-body container">
               <div className="tile is-ancestor">
@@ -28,7 +29,18 @@ const App = () => {
                   <Controls polygon={polygon} />
                 </div>
                 <div className="tile is-parent">
-                  <Canvas polygon={polygon} />
+                  <Stage width={150} height={150}>
+                    <Layer>
+                      <RegularPolygon
+                        x={50}
+                        y={50}
+                        sides={polygon.sides.state}
+                        width={50}
+                        height={50}
+                        fill={'red'}
+                        />
+                    </Layer>
+                  </Stage>
                 </div>
               </div>
             </div>

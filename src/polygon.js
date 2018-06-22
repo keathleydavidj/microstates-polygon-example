@@ -1,7 +1,5 @@
-
 export default class Polygon {
   sides = Number;
-  sides2 = [Number];
   sideLength = Number;
 
   incrementSides(value = 1) {
